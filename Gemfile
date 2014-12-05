@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+group :production do
+   gem 'rails_12factor'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.10'
 
@@ -30,6 +34,11 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password

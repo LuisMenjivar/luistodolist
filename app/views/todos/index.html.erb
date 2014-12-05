@@ -1,0 +1,12 @@
+<h1>Listing products</h1>
+
+<table>
+<% @todo.each do |todo| %>
+      <dl>
+        <dt><%= todo.description %></dt>
+      </dl>
+    </td>
+    <% end %>
+</table>
+<br />
+<%= link_to 'New todo', new_todo_path %>
