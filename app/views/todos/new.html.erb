@@ -1,4 +1,4 @@
-<%= form_for Todo.new do |form| %>
-  <%= form.text_field :description, placeholder: 'Description' %>
-  <%= form.submit 'save' %>
+<%= form_for @todo do |form| %>
+  <h4><%= form.text_field :description, placeholder: 'Description' %>
+  <%= form.submit 'save' %><h4/>
 <% end %>
