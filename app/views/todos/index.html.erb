@@ -4,10 +4,13 @@
 
 <% @todos.each do |t| %>
       <dl>
-        <dt><h4><%= t.description %></h4></dt>
+        <dt><h4><%= t.description %>
+        <%= link_to 'Completed', t, method: :delete, data: { confirm: 'Are you sure?' } %>
+
       </dl>
     <% end %>
     <h4><%= link_to 'New todo', new_todo_path %></h4>
+     
 </table>
 
 
