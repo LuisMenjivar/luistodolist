@@ -1,7 +1,9 @@
 class TodosController < ApplicationController 
-
+  
+  before_action :authenticate_user!
+  
   def index
-    @todo = Todo.all
+    @todos = current_user.todos
   end
 
   def new
@@ -9,14 +11,16 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @user = current_user
+    @todo = @user.todos.new(todo_params)
     @todo.save
     redirect_to todos_path, notice: 'Item was saved' 
   end
 
-  def show
-    @todo = Todo.find params[:id]
-  end
+  # def show
+  #   @user = current_user
+  #   @todo = @user.todos
+  # end
 
 
 private

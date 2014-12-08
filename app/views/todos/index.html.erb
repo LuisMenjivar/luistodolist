@@ -1,12 +1,14 @@
 <h1>To Do List</h1>
 
 <table>
-<% @todo.each do |todo| %>
+
+<% @todos.each do |t| %>
       <dl>
-        <dt><h4><%= todo.description %></h4></dt>
+        <dt><h4><%= t.description %></h4></dt>
       </dl>
     <% end %>
     <h4><%= link_to 'New todo', new_todo_path %></h4>
 </table>
+
 
 
