@@ -6,6 +6,11 @@ class TodosController < ApplicationController
     @todos = current_user.todos
   end
 
+  def sec(todo)
+    @seconds = 7.days - (Time.now - todo.created_at).to_i
+    @days = seconds/86400  
+  end
+
   def new
     @todo = Todo.new
   end
