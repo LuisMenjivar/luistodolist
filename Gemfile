@@ -14,6 +14,7 @@ gem 'figaro', '1.0'
 gem 'whenever', :require => false
 gem 'capistrano', '~> 3.3.0'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'mandrill-api'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

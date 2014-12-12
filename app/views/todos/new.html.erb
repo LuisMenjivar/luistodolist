@@ -1,4 +1,6 @@
 <%= form_for @todo do |form| %>
-  <h4><%= form.text_field :description, placeholder: 'Description' %>
-  <%= form.submit 'save' %><h4/>
-<% end %>
+<div class="form-group">
+  <%= form.text_field :description, placeholder: 'Description' %>
+  <%= form.submit 'save' %></div>
+
+        <% end %>
