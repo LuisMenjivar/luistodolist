@@ -1,5 +1,24 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe Todo, :type => :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+RSpec.describe Todo, :type => :model do
+  
+
+  context "associations" do
+
+    it "belongs to user" do
+      expect(Todo.new).to belong_to(:user)
+    end
+
+  end
+
+  context "validations" do
+    it "ensures description is at least 5 characters" do
+      #expect(Todo.new).to validate_length_of(:description).is_at_least(5)
+      #it { should validate_length_of(:description).is_at_least(5) }
+      #expect(Todo.new).to validate_uniqueness_of(:description)
+      expect(Todo.new).to ensure_length_of(:description).is_at_least(5)
+    end
+  end
+
+end
+
