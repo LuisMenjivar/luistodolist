@@ -53,6 +53,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers', require: false
 end
 
 # Use ActiveModel has_secure_password
