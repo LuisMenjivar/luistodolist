@@ -6,19 +6,12 @@ class TodosController < ApplicationController
     @todos = current_user.todos
   end
 
-  def sec(todo)
-    @seconds = 7.days - (Time.now - todo.created_at).to_i
-    @days = seconds/86400  
-  end
-
   def new
     @todo = Todo.new
   end
 
   def create
-    @user = current_user
-    @todo = @user.todos.new(todo_params)
-    @todo.save
+    @todo = current_user.todos.create(todo_params)
     redirect_to todos_path, notice: 'Item was saved' 
   end
 
@@ -31,16 +24,16 @@ class TodosController < ApplicationController
   def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy
-    redirect_to todos_path
+    redirect_to todos_path, notice: 'Todo was deleted' 
   end
 
 
 
-private
+  private
 
-def todo_params
-  params.require(:todo).permit(:description) 
-end
+  def todo_params
+    params.require(:todo).permit(:description) 
+  end
 
 
 end

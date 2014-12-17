@@ -6,7 +6,7 @@
       <dl>
         <dt> <h4> 
                  <p, id='red'><%= t.description %></p>
-                 <p, id='dim'><%= sec(t) %></p> 
+                 <p, id='dim'><%= days_left_to_complete(t) %></p> 
                  <%= button_to "Completed", { action: "destroy", id: t.id },
                  method: :delete, data: { confirm: "Are you sure?" } %>
              </h4>

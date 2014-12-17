@@ -1,20 +1,26 @@
 require 'rails_helper'
+
+include Warden::Test::Helpers
+Warden.test_mode!
+
+
   feature 'user creates todo' do 
+    
+    before do 
+      @user1 = create(:user)
+      login_as @user1
+    end
 
     scenario 'succesfully' do
       # Create Users
-      user = User.new(
-        email:    'example@example.com',
-        password: 'password'
-      )
-      
-      user.save!
+      # user = User.new(
+      #   email:    'example@example.com',
+      #   password: 'password'
+      # )
+      # user.save!
 
-      visit new_user_session_path
-      fill_in 'Email', with: 'example@example.com'
-      fill_in 'Password', with: 'password'
-      puts page.body
-      click_button 'Log in'
+
+
       visit new_todo_path
 
 
