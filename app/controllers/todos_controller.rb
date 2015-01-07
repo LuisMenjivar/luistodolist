@@ -12,7 +12,11 @@ class TodosController < ApplicationController
 
   def create
     @todo = current_user.todos.create(todo_params)
-    redirect_to todos_path, notice: 'Item was saved' 
+    if @todo.save 
+      redirect_to todos_path, notice:'Item was saved' 
+    else 
+      render :action => :new
+    end
   end
 
   # def show
@@ -22,7 +26,8 @@ class TodosController < ApplicationController
 
 
   def destroy
-    @todo = Todo.find(params[:id])
+    # @todos = current_user.todos
+    @todo = Todo.where(user_id: current_user.id).find(params[:id])
     @todo.destroy
     redirect_to todos_path, notice: 'Todo was deleted' 
   end
