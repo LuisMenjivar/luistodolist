@@ -30,8 +30,6 @@ ActiveRecord::Migration.check_pending!
 
 RSpec.configure do |config|
 
-  # config.include Devise::TestHelpers, :type => :controller
-
 
   # Make Factory Girl's methods avilable
   config.include FactoryGirl::Syntax::Methods
