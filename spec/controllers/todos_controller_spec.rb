@@ -29,7 +29,14 @@ describe TodosController do
   end
   describe "#destroy" do 
     
-    it "deletes todo" do 
+    it "deletes todo successfully" do 
+      current_user = @user
+      current_user_todo = create(:todo, user: current_user)
+      expect(current_user_todo.persisted?).to eq(true)
+      expect(current_user.todos.size).to eq 1
+      delete :destroy, id: current_user_todo.id
+      expect(@user.todos.size).to eq 0
+      expect{current_user_todo.reload.persisted?}.to raise_error(ActiveRecord::RecordNotFound)
     end
     
     it "does not delete another user's todo" do 
@@ -38,7 +45,6 @@ describe TodosController do
       expect(victim_todo.reload.persisted?).to eq(true)
     end
 
-    
-  end 
+    end 
 end
  
