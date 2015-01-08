@@ -4,9 +4,9 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
-require 'capybara/rails'
-require 'capybara/rspec'
-require 'devise'
+# require 'capybara/rails'
+# require 'capybara/rspec'
+# require 'devise'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -22,15 +22,13 @@ require 'devise'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending!
 
 RSpec.configure do |config|
-
-  # config.include Devise::TestHelpers, :type => :controller
 
 
   # Make Factory Girl's methods avilable
