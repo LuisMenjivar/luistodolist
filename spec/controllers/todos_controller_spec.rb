@@ -44,7 +44,6 @@ describe TodosController do
       expect { delete :destroy, id: victim_todo.id }.to raise_error(ActiveRecord::RecordNotFound)
       expect(victim_todo.reload.persisted?).to eq(true)
     end
-
-    end 
+  end 
 end
  
