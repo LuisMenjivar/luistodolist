@@ -1,4 +1,4 @@
-@import "bootstrap";
+
 h1 {
     text-align: center;
   }
@@ -13,6 +13,12 @@ p {text-align: center}
   opacity: 0.5;
  }
 
+style type{"text/css"
+  .myNewStyle { 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-weight: bold; color: #FF0000; 
+    } 
+}
 
 
 

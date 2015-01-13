@@ -6,12 +6,20 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 <% if current_user %>
+<p class="myNewStyle">
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+</p>
+
+
 <% end %>
 </head>
 <body>
 
-  <p><%= flash[:notice] if flash[:notice] %> </p>
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
+
+
 
 <%= yield %>
 
