@@ -1,9 +1,11 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
+require "email_spec"
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
+
 # require 'capybara/rails'
 # require 'capybara/rspec'
 # require 'devise'
@@ -29,6 +31,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending!
 
 RSpec.configure do |config|
+
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
+  config.include Features::SessionHelpers, type: :feature
+
 
 
   # Make Factory Girl's methods avilable

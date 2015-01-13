@@ -14,8 +14,6 @@ gem 'figaro', '1.0'
 gem 'whenever', :require => false
 gem 'capistrano', '~> 3.3.0'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'mandrill-api'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.10'
@@ -54,7 +52,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda-matchers', require: false
- 
+  gem 'email_spec' 
+  gem 'action_mailer_cache_delivery', '~> 0.3.7'
 end
 
 # Use ActiveModel has_secure_password
