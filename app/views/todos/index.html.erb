@@ -5,8 +5,13 @@
 <div class="block">
    <% @todos.each do |todo| %>
    <p> <%= todo.description %></p>
-   <p><%= link_to "Click to Complete", { action: "destroy", id: todo.id },
+   <p class="dim"><%="#{days_left_to_complete(todo)}"%></p>
+   <p><%= link_to "Click to complete", { action: "destroy", id: todo.id },
                  method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger " %></p>
+
+ <footer class="footer">
+       
+      </footer>
 
     <% end %>
 </div>

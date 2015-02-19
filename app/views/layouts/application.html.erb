@@ -8,6 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="nav nav-tabs">
+  <% if current_user %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+  <% end %>
+</div>
      <div class="masthead">
         <h3 class="text-muted">Luis Todo List</h3>
         <nav>

@@ -99,12 +99,19 @@
 
 .block {
   font-family: Arial, Consolas, 'Lucida Console', monospace;
-  font-size: 21px;
+  font-size: 25px;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
   line-height: 30px;
   text-align: center; 
   padding: 14px 24px;
+  color: #00008B;
 }
-
+.dim{
+  color: #4169E1;
+  font-size: 15px;
+}
+.nav nav-tabs{
+  font-size: 30px
+}
