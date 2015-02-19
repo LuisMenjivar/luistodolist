@@ -16,7 +16,7 @@ standard.save!
 5.times do
   todo = Todo.new(
     description:   Faker::Hacker.say_something_smart,
-    created_at: Time.now
+    created_at: Time.now,
     user: standard
   )
   todo.save

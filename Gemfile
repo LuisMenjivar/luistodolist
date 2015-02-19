@@ -13,7 +13,9 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'whenever', :require => false
 gem 'capistrano', '~> 3.3.0'
-gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '>= 3.2'
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -22,7 +24,7 @@ gem 'rails', '4.0.10'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
