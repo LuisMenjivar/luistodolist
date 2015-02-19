@@ -99,7 +99,7 @@
 
 .block {
   font-family: Arial, Consolas, 'Lucida Console', monospace;
-  font-size: 25px;
+  font-size: 15px;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
@@ -114,4 +114,7 @@
 }
 .nav nav-tabs{
   font-size: 30px
+}
+.border{
+  border-top: 1px solid black;
 }
