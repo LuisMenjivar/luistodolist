@@ -6,4 +6,8 @@
 
 + Users have only one todo list. Users have many todo items. Only using User and Todo models. 
 
-+ Using figaro to hide username and passwords in application.yml folder. 
++ Using figaro to hide username and passwords in application.yml folder. <br>
+
+sign in as <br>
+username:   standard@example.com<br>
+password:   helloworld
